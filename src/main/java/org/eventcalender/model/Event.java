@@ -9,7 +9,7 @@ import static javax.persistence.GenerationType.AUTO;
 
 
 @Entity
-//@Table(name="events",schema="eventcalender")
+@Table(name="events",schema="eventcalender")
 public class Event {
    @Id
     @GeneratedValue(strategy = AUTO)
