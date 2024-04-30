@@ -25,7 +25,9 @@ public class EventService
         return eventRepository.findById(id).get();
     }
 
-    public void  addEvent(Event event){
+
+    @Autowired
+        public void  addEvent(Event event){
          eventRepository.save(event);
     }
 
