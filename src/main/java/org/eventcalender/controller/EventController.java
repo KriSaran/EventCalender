@@ -1,8 +1,7 @@
 package org.eventcalender.controller;
 
-import org.eventcalender.model.EventRepository;
+import org.eventcalender.model.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,13 +12,14 @@ public class EventController {
 
 
     @Autowired
-    private EventRepository eventRepository;
+    EventService eventService;
 
-    @GetMapping("")
+    @GetMapping("/event")
     public String view()
     {
 //        model.addAttribute("view",eventRepository.findAll());
-        return eventRepository.findAll().toString();
+        return eventService.viewAll().toString();
+
     }
 
 
